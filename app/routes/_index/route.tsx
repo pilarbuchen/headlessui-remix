@@ -4,9 +4,7 @@ import { LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node
 import commonStyles from '~/styles/common-styles.module.scss';
 import { getUrlOriginWithPath } from '~/utils';
 import TypescriptSvg from '../../../src/assets/svg/typescript.svg';
-import ViteSvg from '../../../src/assets/svg/vite.svg';
-import { Button, Field, Label, Description, Input } from '@headlessui/react';
-import clsx from 'clsx';
+import MyHeadlessUiComponent from '../../../src/components/my-headless-ui-component/my-headless-ui-component';
 
 export const loader = ({ request }: LoaderFunctionArgs) => {
     return { canonicalUrl: getUrlOriginWithPath(request.url) };
@@ -14,32 +12,8 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 
 export default function HomePage() {
     return (
-        <div className={styles.root}>
-            <div className="w-full max-w-md px-4">
-                <Field>
-                    <Label className="text-sm/6 font-medium text-white">Name</Label>
-                    <Description className="text-sm/6 text-white/50">
-                        Use your real name so people will recognize you.
-                    </Description>
-                    <Input
-                        className={clsx(
-                            'mt-3 block w-full rounded-lg border-none bg-white/5 py-1.5 px-3 text-sm/6 text-white',
-                            'focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25'
-                        )}
-                    />
-                </Field>
-            </div>
-            <h2 className={styles.title}>Welcome to your App Homepage 🎉</h2>
-            <span>
-                Double click to edit App component
-                <br />
-                &amp; drag here elements from + Add <b>Elements</b> Panel
-            </span>
-            <p className={styles.paragraph}>
-                This project is using <img src={ViteSvg} width="12" />+
-                <img src={TypescriptSvg} width="12" />
-                Visit vitejs.dev to learn more.{' '}
-            </p>
+        <div>
+            <MyHeadlessUiComponent />
         </div>
     );
 }

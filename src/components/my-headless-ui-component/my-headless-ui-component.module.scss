@@ -1,4 +1,123 @@
 @import '../../../src/styles/theme.module.scss';
 
-.root {
+// my-headless-ui-component.module.scss
+.container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #1e1b4b, #4c1d95, #831843);
+  padding: 3rem 1rem;
+}
+
+.card {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: white;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: rgba(167, 139, 250, 0.5);
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.25);
+  }
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.listbox {
+  position: relative;
+  width: 100%;
+
+  &Button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &Options {
+    position: absolute;
+    margin-top: 0.5rem;
+    width: 100%;
+    background: rgba(31, 41, 55, 0.9);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    z-index: 10;
+  }
+
+  &Option {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: white;
+
+    &:hover {
+      background: rgba(167, 139, 250, 0.2);
+    }
+  }
 }
